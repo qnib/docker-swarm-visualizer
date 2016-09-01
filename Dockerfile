@@ -18,7 +18,7 @@ RUN cp -r /opt/docker-swarm-visualizer-master/* /opt/swarm-visualizer/ \
  && npm run dist
 
 # Default host is localhost. This is for same-origin policies.
-ENV HOST "localhost" \
+ENV HOST=localhost \
     DOCKER_HOST=/var/run/docker.sock
 
 # Number of milliseconds between polling requests. Default is 1000.
