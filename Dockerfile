@@ -29,4 +29,8 @@ ENV PORT 8080
 EXPOSE 8080
 
 ADD etc/supervisord.d/swarm-visualizer.ini /etc/supervisord.d/
-ADD opt/qnib/swarm-visualizer/bin/start.sh /opt/qnib/swarm-visualizer/bin/
+ADD opt/qnib/swarm-visualizer/bin/start.sh \
+    opt/qnib/swarm-visualizer/bin/healthcheck.sh \
+    /opt/qnib/swarm-visualizer/bin/
+HEALTHCHECK --interval=2s --retries=120 --timeout=1s \
+  CMD /opt/qnib/swarm-visualizer/bin/healthcheck.sh
