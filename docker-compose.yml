@@ -1,0 +1,13 @@
+version: '2'
+services:
+  swarm-visualizer:
+    container_name: swarm-visualizer
+    hostname: swarm-visualizer
+    image: qnib/swarm-visualizer
+    ports:
+     - 8080:8080
+    environment:
+     #- DOCKER_HOST=localhost:2376
+     - ADV_HOST=localhost
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
