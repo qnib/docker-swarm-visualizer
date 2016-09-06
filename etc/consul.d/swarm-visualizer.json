@@ -1,0 +1,14 @@
+{
+  "services": [
+    {
+        "id": "swarm-visualizer",
+        "name": "swarm-visualizer",
+        "tags": [],
+        "port": 8080,
+        "checks": [{
+            "script": "/opt/qnib/swarm-visualizer/bin/healthcheck.sh",
+            "interval": "10s"
+        }]
+    }
+  ]
+}
